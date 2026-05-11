@@ -11,12 +11,14 @@ Internal RC Oscillator: Configured to run at 16.5 MHz using the internal PLL, el
 ________________________________________
 Hardware Configuration
 Pin Assignment
-ATtiny45/85 Pin	Function	NES Controller Wire
-PB0 (Pin 5)	USB D-	—
-PB1 (Pin 6)	NES CLOCK	Clock (Pulse)
-PB2 (Pin 7)	USB D+	—
-PB3 (Pin 2)	NES LATCH	Latch (Strobe)
-PB4 (Pin 3)	NES DATA	Data (Serial Out)
+| ATtiny45/85 Pin | Function | NES Controller Wire |
+| :--- | :--- | :--- |
+| **PB0 (Pin 5)** | USB D- | — |
+| **PB1 (Pin 6)** | NES CLOCK | Clock (Pulse) |
+| **PB2 (Pin 7)** | USB D+ | — |
+| **PB3 (Pin 2)** | NES LATCH | Latch (Strobe) |
+| **PB4 (Pin 3)** | NES DATA | Data (Serial Out) |
+________________________________________
 Controller Mapping
 The firmware reads the 8-bit shift register from the NES controller and maps them to USB HID report bits:
 D-Pad: Mapped to X/Y axes (Left/Right = X, Up/Down = Y).
@@ -36,12 +38,19 @@ avr-gcc compiler
 avrdude (for flashing)
 A programmer (e.g., USBasp)
 Build Instructions
+<br>
 Compile the code:
+```bash
 make all
+```
 Set the Fuses (Crucial for USB timing):
+```bash
 make fuse
+```
 Flash the firmware:
+```bash
 make flash
+```
 ________________________________________
 Important Notes
 WARNING
